@@ -69,3 +69,73 @@
     
 
 }
+.boxes .container{
+    background-color: #f9faf8;
+}
+.container .images{
+    display: flex;
+    gap: 30px;
+
+}
+.container .random{
+    text-align: center;
+    color: #1f2937;
+    font-size: 34px;
+    font-weight: bolder;
+    font-family: 'Roboto';
+    margin-bottom: 20px;
+
+}
+.testimonial{
+    background-color: #e5e7eb;
+
+}
+.container .thor{
+    text-align: center;
+    font-size: 36px;
+    font-weight: lighter;
+    font-style: italic;
+    padding: 60px;
+}
+.container .thunder{
+    font-weight: bolder;
+    font-family: 'Roboto';
+    color: #1f2937;
+    margin-left: auto;
+    text-align: end;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.container .action_call{
+    display: flex;  
+    background-color: #3882f6;
+    padding: 60px;
+    border-radius: 4px;
+    margin: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.action_call .text{
+    font-size: 20px;
+}
+.outline_button{
+    height: 45px;
+    width: 120px;
+    border-radius: 10px;
+    margin-left: auto;
+    border: 2px solid white;
+    color: #f9faf8;
+    background-color: #3882f6;
+
+}
+.footer{
+    background-color: #1f2937;
+    color: #f9faf8;
+    text-align: center;
+    font-family: 'Roboto';
+    font-weight: lighter;
+    font-size: 15px;
+    font-style: normal;
+    padding: 10px;
+}
