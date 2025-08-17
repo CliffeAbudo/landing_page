@@ -69,22 +69,47 @@
     
 
 }
-.boxes .container{
-    background-color: #f9faf8;
+.info-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: white;
 }
-.container .images{
-    display: flex;
-    gap: 30px;
-
+.info-section h2 {
+  font-size: 24px;
+  color: #2c2c2c;
+  margin-bottom: 40px;
 }
-.container .random{
-    text-align: center;
-    color: #1f2937;
-    font-size: 34px;
-    font-weight: bolder;
-    font-family: 'Roboto';
-    margin-bottom: 20px;
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 150px;
+}
+.card-image {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
 
+.card-text {
+  font-size: 13px;
+  color: #5f5f5f;
+  text-align: center;
+  line-height: 1.4;
 }
 .testimonial{
     background-color: #e5e7eb;
