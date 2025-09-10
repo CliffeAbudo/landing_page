@@ -51,4 +51,26 @@ console.log(typeof myNum);
 const myNum2 = 123;
 const myString2 = String(myNum2);
 console.log(typeof myString2);
-// string
+
+
+// string concatenation
+let word1 = "hello";
+let word2 = "world";
+let word3 =  word1.concat(" ", word2);
+console.log(word3);
+
+//EXTRACTING STRING PARTS
+//String slice
+let group = "Apple, Banana, Kiwi";
+let part = group.slice(7,13);
+console.log(part);
+
+//String Substring
+let str = "watermelon, Pizza, Money";
+let prt = str.substring(7,13);
+console.log(prt);
+
+//Well forme dstring
+let phrase = "HELLO WORLD";
+let logic = phrase.isWellFormed();
+console.log(logic);
