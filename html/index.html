@@ -1,103 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link rel="stylesheet" href="/css/index.css">
+  <meta charset="UTF-8">
+  <title>Chat Box Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #chat { border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: auto; }
+    input { width: 80%; padding: 5px; }
+    button { padding: 5px 10px; }
+  </style>
 </head>
 <body>
-    <header class="main">
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">Header Logo</div>
-          <ul class="list_items">
-            <li>
-                <a href="#">Header Link One</a>
-            </li>
-            <li>
-                <a href="#">Header Link Two</a>
-            </li>
-            <li>
-                <a href="#">Header Link Three</a>
-            </li>
-            </ul>
-        </div>
-    </nav>
+  <h2>Chat Box Demo</h2>
+  <div id="chat"></div>
+  <br>
+  <input id="messageInput" placeholder="Type a message...">
+  <button id="sendBtn">Send</button>
+  <button id="testBtn">Test Lone Surrogate</button>
 
-    
-        <div class="container">
-            <div class="hero_section">
-            <div class="hero">
-            <h2 class="main_heading">This website is awesome</h2> 
-            <p class="subtext">This website has some subtext that goes here under the main title. <br>It's a smaller font and the colour is lower contrast</p>
-            <button class="sign_up"> Sign up</button>
-            </div>
-            <img src="/images/hero.jpeg" class="hero_image" alt="">
-            </div>
-        </div>
-    </header>
+  <script>
+    // 🔹 Lone surrogate sanitizer
+    function sanitizeText(str) {
+      return str
+        // Remove unmatched high surrogates
+        .replace(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/g, "")
+        // Remove unmatched low surrogates
+        .replace(/(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g, "");
+    }
 
-      <section class="info-section">
-      <div class="container">
-          <h2>Some random information.</h2>
-    <div class="cards-container">
-      <div class="card">
-        <div class="card-image"></div>
-        <p class="card-text">this is some subtext<br>under an illustration<br>or image</p>
-      </div>
-      <div class="card">
-        <div class="card-image"></div>
-        <p class="card-text">this is some subtext<br>under an illustration<br>or image</p>
-      </div>
-      <div class="card">
-        <div class="card-image"></div>
-        <p class="card-text">this is some subtext<br>under an illustration<br>or image</p>
-      </div>
-      <div class="card">
-        <div class="card-image"></div>
-        <p class="card-text">this is some subtext<br>under an illustration<br>or image</p>
-      </div>
-    </div>
-      </div>
-  </section>
+    const chat = document.getElementById("chat");
+    const input = document.getElementById("messageInput");
+    const sendBtn = document.getElementById("sendBtn");
+    const testBtn = document.getElementById("testBtn");
+
+    // Handle sending messages
+    sendBtn.addEventListener("click", () => {
+      let msg = input.value;
+
+      // 🧼 Sanitize before adding to chat
+      msg = sanitizeText(msg);
+
+      if (msg.trim() !== "") {
+        const div = document.createElement("div");
+        div.textContent = msg;
+        chat.appendChild(div);
+        input.value = "";
+      }
+    });
 
 
-
-
-
-
-    <section class="testimonial">
-        <div class="container">
-            <p class="thor"> This is an inspiring quote,or a testimonial from a customer.
-                Maybe it is just filling up space,or maybe people will actually read it.
-            Who knows? All I know is that it looks nice.</p>
-            <p class="thunder">Thor,God of thunder</p>
-        </div>
-    </section>
-
-    <section class="call">
-        <div class="container">
-            <div class="action_call">
-                <div class="text">
-                    <h4>Call to action!It's time!</h4>
-                    <p>Sign up for our product by clicking that button right over there!</p>
-                    
-                </div>
-                
-                <button class="outline_button"> Sign up</button>
-                
-            </div>
-        </div>
-    </section>
-
-
-    <footer>
-        <div class="footer">
-           <p>Copyright &copy; The Odin Project</p> 
-        </div>
-    </footer>
-
-    
+    // Insert a lone surrogate into the input box for testing
+    testBtn.addEventListener("click", () => {
+      input.value = "\uD800"; // actual lone surrogate character
+      alert("Inserted a lone surrogate (invisible/broken character) into the input box. Try clicking Send!");
+    });
+  </script>
 </body>
 </html>

@@ -74,3 +74,27 @@ console.log(prt);
 let phrase = "HELLO WORLD";
 let logic = phrase.isWellFormed();
 console.log(logic);
+
+
+//some extra stuff
+/*function sanitizeText(str) {
+  return str
+    // remove unmatched high surrogates
+    .replace(/[\uD800-\uDBFF](?![\uDC00-\uDFFF])/g, "")
+    // remove unmatched low surrogates
+    .replace(/(?<![\uD800-\uDBFF])[\uDC00-\uDFFF]/g, "");
+}
+
+// Use it only where needed
+chatBox.oninput = (e) => {
+  e.target.value = sanitizeText(e.target.value);
+};
+
+api.sendMessage(sanitizeText(userMessage));
+ */
+
+//For example in input fields
+/* chatInput.addEventListener("input", e => {
+  e.target.value = sanitizeText(e.target.value);
+});
+*/
