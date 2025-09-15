@@ -98,3 +98,24 @@ api.sendMessage(sanitizeText(userMessage));
   e.target.value = sanitizeText(e.target.value);
 });
 */
+
+let surrogate = "Hello World \uD800";
+let result = surrogate.toWellFormed();
+console.log(result);
+
+let content = "      Hello World!      ";
+let answer = content.trim();
+console.log(answer);
+
+let script = "I lick the spoon I scrape the bowl";
+let Don_Toliver = script.repeat(10);
+console.log(Don_Toliver);
+
+
+let text1212 = "Please visit Microsoft and Microsoft!";
+let newText = text1212.replace("Microsoft", "W3Schools");
+
+let letters = "a,b,c,d,e,f";
+let mello = letters.split(",");
+console.log(mello);
+
