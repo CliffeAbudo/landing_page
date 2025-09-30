@@ -119,3 +119,5 @@ let letters = "a,b,c,d,e,f";
 let mello = letters.split(",");
 console.log(mello);
 
+console.log( 'Z' > 'A' );
+
